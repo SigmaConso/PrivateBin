@@ -1,3 +1,11 @@
+
+This is a fork of https://github.com/PrivateBin/PrivateBin
+
+cheatsheet:
+- howto create html's "integrity" string: openssl dgst -sha512 -binary js/privatebin.js | openssl base64
+
+Below is the original Readme.md file:  
+----------------8<-------------[ cut here ]------------------
 # [![PrivateBin](https://cdn.rawgit.com/PrivateBin/assets/master/images/preview/logoSmall.png)](https://privatebin.info/)
 
 *Current version: 1.4.0*
