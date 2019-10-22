@@ -5,7 +5,7 @@
 
 [main]
 ; (optional) set a project name to be displayed on the website
-; name = "PrivateBin"
+name = "SigmaConso PrivateBin"
 
 ; enable or disable the discussion feature, defaults to true
 discussion = true
@@ -17,7 +17,7 @@ opendiscussion = false
 password = true
 
 ; enable or disable the file upload feature, defaults to false
-fileupload = false
+fileupload = true
 
 ; preselect the burn-after-reading feature, defaults to false
 burnafterreadingselected = false
@@ -30,7 +30,8 @@ defaultformatter = "plaintext"
 ; syntaxhighlightingtheme = "sons-of-obsidian"
 
 ; size limit per paste or comment in bytes, defaults to 2 Mebibytes
-sizelimit = 2097152
+;sizelimit = 2097152
+sizelimit = 209715200
 
 ; template to include, default is "bootstrap" (tpl/bootstrap.php)
 template = "bootstrap"
@@ -92,8 +93,9 @@ default = "1week"
 1week = 604800
 ; Well this is not *exactly* one month, it's 30 days:
 1month = 2592000
-1year = 31536000
-never = 0
+2months = 5184001
+; 1year = 31536000
+; never = 0
 
 [formatter_options]
 ; Set available formatters, their order and their labels
