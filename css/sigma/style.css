@@ -1,0 +1,125 @@
+
+@font-face {
+	font-family: 'DaxOT';
+	src: url('DaxOT-Light.eot');
+	src: url('DaxOT-Light.eot?#iefix') format('embedded-opentype'),
+		url('DaxOT-Light.woff') format('woff'),
+		url('DaxOT-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DaxOT';
+	src: url('DaxOT.eot');
+	src: url('DaxOT.eot?#iefix') format('embedded-opentype'),
+		url('DaxOT.woff') format('woff'),
+		url('DaxOT.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DaxOT';
+	src: url('DaxOT-Medium.eot');
+	src: url('DaxOT-Medium.eot?#iefix') format('embedded-opentype'),
+		url('DaxOT-Medium.woff') format('woff'),
+		url('DaxOT-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DaxOT';
+	src: url('DaxOT-Bold.eot');
+	src: url('DaxOT-Bold.eot?#iefix') format('embedded-opentype'),
+		url('DaxOT-Bold.woff') format('woff'),
+		url('DaxOT-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DaxOT';
+	src: url('DaxOT-Bold_1.eot');
+	src: url('DaxOT-Bold_1.eot?#iefix') format('embedded-opentype'),
+		url('DaxOT-Bold_1.woff') format('woff'),
+		url('DaxOT-Bold_1.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+body
+{
+	font-family: 'DaxOT';
+	background: #ffffff;
+	padding-bottom: 0;
+}
+a:hover
+{
+	text-decoration: none;
+}
+
+.sigmaHeader > .row
+{
+	height: 48px;
+	padding: 3px;
+	margin: 0;
+}
+.sigmaHeader > .row img
+{
+	height: 42px;
+}
+.sigmaHeader > .blueHeader
+{
+	background: #0160a0;
+}
+.sigmaHeader > .blueHeader img
+{
+	-webkit-filter: brightness(0%) invert(1);
+	filter: brightness(0%) invert(1);
+}
+.sigmaHeader .catchword
+{
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.passwordPanel,
+#placeholder,
+#plaintext,
+#prettymessage
+{
+	margin-top: 10px;
+}
+
+.btn-primary
+{
+	background: #0160a0;
+}
+
+.sigmaFooter
+{
+	background: #0160a0;
+	color: #ffffff;
+	text-align: center;
+	margin-top: 30px;
+}
+.sigmaFooter > div
+{
+	margin: 0;
+}
+.sigmaFooter .right
+{
+	text-align: right;
+	margin-bottom: 20px;
+}
+.sigmaFooter a
+{
+	color: #ffffff;
+}
+.sigmaFooter .right img
+{
+	height: 18px;
+}
