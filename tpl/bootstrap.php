@@ -20,7 +20,9 @@ if (!$isDark) :
 <?php
 endif;
 ?>
+		<!--
 		<link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-theme-3.4.1.css" />
+		-->
 <?php
 if ($isDark) :
 ?>
@@ -76,7 +78,6 @@ endif;
 		<script type="text/javascript" data-cfasync="false" src="js/privatebin.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-FxTBYpYL0BxoPyiqMntUKyf0VxWcIvfGqOYkOCb9XSQ80Kwz4rqVhwG4zz3WQlyf9gJYhQK1Ezp77DzQ5pGwLA==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/pwgen.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-8W1dftRV1qHdRFbkTjDNnd0LGt6BPWNMAb4T6e/117IE3O56Zyey0et/vXzhUNnJuGTPduPwJ2Sk6kN8qWCgJQ==" crossorigin="anonymous"></script>
 		<!-- icon -->
-		<link rel="apple-touch-icon" href="<?php echo I18n::encode($BASEPATH); ?>img/apple-touch-icon.png" sizes="180x180" />
 		<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
 		<link rel="manifest" href="manifest.json?<?php echo rawurlencode($VERSION); ?>" />
@@ -84,6 +85,7 @@ endif;
 		<link rel="shortcut icon" href="img/favicon.ico">
 		<meta name="msapplication-config" content="browserconfig.xml">
 		<meta name="theme-color" content="#ffe57e" />
+		<link type="text/css" rel="stylesheet" href="css/sigma/style.css" />
 		<!-- Twitter/social media cards -->
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content="<?php echo I18n::_('Encrypted note on %s', I18n::_($NAME)) ?>" />
@@ -146,6 +148,29 @@ if ($QRCODE) :
 <?php
 endif;
 ?>
+
+		<div class="sigmaHeader">
+			<div class="row hidden-xs hidden-sm">
+				<div class="col-xs-3">
+					<a href="https://www.sigmaconso.com">
+						<img src="img/sigmaLogo.png"/>
+					</a>
+				</div>
+				<div class="col-xs-8 catchword">
+					<a href="http://www.sigmaconso.com">
+						Expertise in Corporate Performance Management
+					</a>
+				</div>
+			</div>
+			<div class="row blueHeader">
+				<div class="col-xs-11 hidden-md hidden-lg">
+					<a href="http://www.sigmaconso.com">
+						<img src="img/sigmaLogo.png"/>
+					</a>
+				</div>
+			</div>
+		</div>
+
 		<div id="emailconfirmmodal" tabindex="-1" class="modal fade" aria-labelledby="emailconfirmmodalTitle" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -180,9 +205,11 @@ endif;
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
+				<!--
 				<a class="reloadlink navbar-brand" href="">
 					<img alt="<?php echo I18n::_($NAME); ?>" src="img/icon.svg" width="38" />
 				</a>
+				-->
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -563,7 +590,7 @@ endif;
 					</div>
 					<div id="plaintext" class="col-md-12 hidden"></div>
 					<div id="messageContainer" class="col-md-12 hidden">
-						<div class="panel panel-default">
+						<div class="passwordPanel panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
 									<a data-toggle="collapse" href="#collapse1">Generate a password</a>
@@ -583,10 +610,17 @@ endif;
 								</div>
 							</div>
 						</div>
-						<textarea id="message" name="message" cols="80" rows="25" class="form-control"></textarea>
+						<textarea id="message" name="message" cols="80" rows="10" class="form-control"></textarea>
 					</div>
 				</article>
 			</section>
+
+			<section class="container">
+				<button id="sendbutton" type="button" class="hidden btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?> navbar-btn">
+					<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <?php echo I18n::_('Send'), PHP_EOL;?>
+				</button>
+			</section>
+
 			<section class="container">
 				<div id="discussion" class="hidden">
 					<h4><?php echo I18n::_('Discussion'); ?></h4>
@@ -600,6 +634,7 @@ endif;
 					<span class="small"><?php echo I18n::_('In case this message never disappears please have a look at <a href="%s">this FAQ for information to troubleshoot</a>.', 'https://github.com/PrivateBin/PrivateBin/wiki/FAQ#why-does-the-loading-message-not-go-away'); ?></span>
 				</div>
 			</section>
+			<!--
 			<footer class="container">
 				<div class="row">
 					<h4 class="col-md-5 col-xs-8"><?php echo I18n::_($NAME); ?> <small>- <?php echo I18n::_('Because ignorance is bliss'); ?></small></h4>
@@ -615,6 +650,7 @@ endif;
 					</p>
 				</div>
 			</footer>
+			-->
 		</main>
 <?php
 if ($DISCUSSION) :
@@ -636,5 +672,26 @@ if ($FILEUPLOAD) :
 <?php
 endif;
 ?>
+
+		<footer class="sigmaFooter">
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<hr/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-xs-offset-4 center">
+					<a href="https://www.sigmaconso.com/en/contact-us/">
+						© 2019 Sigma Conso
+					</a>
+				</div>
+				<div class="col-xs-4 right">
+					<a href="https://github.com/SigmaConso/PrivateBin">
+						Powered by PrivateBin <img src="img/icon.svg"/>
+					</a>
+				</div>
+			</div>
+		</footer>
+
 	</body>
 </html>
