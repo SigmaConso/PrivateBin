@@ -75,7 +75,8 @@ if ($MARKDOWN):
 endif;
 ?>
 		<script type="text/javascript" data-cfasync="false" src="js/purify-2.0.8.js" integrity="sha512-QwcEKGuEmKtMguCO9pqNtUtZqq9b/tJ8gNr5qhY8hykq3zKTlDOvpZAmf6Rs8yH35Bz1ZdctUjj2qEWxT5aXCg==" crossorigin="anonymous"></script>
-		<script type="text/javascript" data-cfasync="false" src="js/privatebin.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-LqJqykq4XPBKgf0fiUu/4NmxGI7oioFgQFeU2wTF9IHOdQ7wUlsSHw9L5vr40rGj0UBjJaX/u5dF62FSF+GNvg==" crossorigin="anonymous"></script>
+		<script type="text/javascript" data-cfasync="false" src="js/privatebin.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-1HY/NycKB7JwInHBOGCwV09co7Bpw+q8vFMIEGheSg1BCWgGy5CNVJ3Vjd0L6bUp9+WhxNyT8G8C32Ni1secQg==" crossorigin="anonymous"></script>
+		<script type="text/javascript" data-cfasync="false" src="js/pwgen.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-8W1dftRV1qHdRFbkTjDNnd0LGt6BPWNMAb4T6e/117IE3O56Zyey0et/vXzhUNnJuGTPduPwJ2Sk6kN8qWCgJQ==" crossorigin="anonymous"></script>
 		<!--[if lt IE 10]>
 		<style type="text/css">body {padding-left:60px;padding-right:60px;} #ienotice {display:block;} #oldienotice {display:block;}</style>
 		<![endif]-->
@@ -493,7 +494,29 @@ endif;
 						<pre id="prettyprint" class="col-md-12 prettyprint linenums:1"></pre>
 					</div>
 					<div id="plaintext" class="col-md-12 hidden"></div>
-					<p class="col-md-12"><textarea id="message" name="message" cols="80" rows="25" class="form-control hidden"></textarea></p>
+					<div id="messageContainer" class="col-md-12 hidden">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapse1">Generate a password</a>
+								</h4>
+							</div>
+							<div id="collapse1" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="form-group">
+										<label for="passwordCharset">Charset:</label>
+										<textarea id="passwordCharset" rows="2" class="form-control"></textarea>
+									</div>
+									<div class="form-group">
+										<label for="passwordLength">Length:</label>
+										<input type="text" id="passwordLength" size="3" class="form-control"/>
+									</div>
+									<button id="passwordGenerate" class="btn btn-default">Generate</button>
+								</div>
+							</div>
+						</div>
+						<textarea id="message" name="message" cols="80" rows="25" class="form-control"></textarea>
+					</div>
 				</article>
 			</section>
 			<section class="container">

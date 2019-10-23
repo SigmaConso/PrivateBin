@@ -1588,7 +1588,8 @@ jQuery.PrivateBin = (function($, sjcl, Base64, RawDeflate) {
         var $editorTabs,
             $messageEdit,
             $messagePreview,
-            $message;
+            $message,
+            $messageContainer;
 
         var isPreview = false;
 
@@ -1634,7 +1635,7 @@ jQuery.PrivateBin = (function($, sjcl, Base64, RawDeflate) {
             PasteViewer.hide();
 
             // reshow input
-            $message.removeClass('hidden');
+            $messageContainer.removeClass('hidden');
 
             me.focusInput();
 
@@ -1661,7 +1662,7 @@ jQuery.PrivateBin = (function($, sjcl, Base64, RawDeflate) {
             $messagePreview.addClass('active');
 
             // hide input as now preview is shown
-            $message.addClass('hidden');
+            $messageContainer.addClass('hidden');
 
             // show preview
             PasteViewer.setText($message.val());
@@ -1716,7 +1717,7 @@ jQuery.PrivateBin = (function($, sjcl, Base64, RawDeflate) {
          */
         me.show = function()
         {
-            $message.removeClass('hidden');
+            $messageContainer.removeClass('hidden');
             $editorTabs.removeClass('hidden');
         };
 
@@ -1728,7 +1729,7 @@ jQuery.PrivateBin = (function($, sjcl, Base64, RawDeflate) {
          */
         me.hide = function()
         {
-            $message.addClass('hidden');
+            $messageContainer.addClass('hidden');
             $editorTabs.addClass('hidden');
         };
 
@@ -1779,6 +1780,7 @@ jQuery.PrivateBin = (function($, sjcl, Base64, RawDeflate) {
         {
             $editorTabs = $('#editorTabs');
             $message = $('#message');
+            $messageContainer = $('#messageContainer');
 
             // bind events
             $message.keydown(supportTabs);
