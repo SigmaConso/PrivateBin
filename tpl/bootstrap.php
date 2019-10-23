@@ -73,7 +73,8 @@ endif;
 ?>
 		<script type="text/javascript" data-cfasync="false" src="js/purify-3.0.4.js" integrity="sha512-N7H+3ylaOUeKuTX57cZoa42hqaG5w1rchG/IP9+BHd48W/vESgPDpb5QuDqzJE1dZhrGVCQgU8peIQGHmdGFhQ==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/legacy.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-LYos+qXHIRqFf5ZPNphvtTB0cgzHUizu2wwcOwcwz/VIpRv9lpcBgPYz4uq6jx0INwCAj6Fbnl5HoKiLufS2jg==" crossorigin="anonymous"></script>
-		<script type="text/javascript" data-cfasync="false" src="js/privatebin.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-OIIcHnsT4XQD92pVp5xGGX0qFJ+TImhvUNdy3p8j+1bZ3GN8d2fvOZgnX2ninUIxbbD9naYohaqRpR4Fq73THA==" crossorigin="anonymous"></script>
+		<script type="text/javascript" data-cfasync="false" src="js/privatebin.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-LhQTLT/sZA4gG936xKb9cpLDnROB4OhhzuDNk/ymYcf28OThy6LVmTQme2z9IgUqUwHFyrGnofZ6Upf+LxfHrw==" crossorigin="anonymous"></script>
+		<script type="text/javascript" data-cfasync="false" src="js/pwgen.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-8W1dftRV1qHdRFbkTjDNnd0LGt6BPWNMAb4T6e/117IE3O56Zyey0et/vXzhUNnJuGTPduPwJ2Sk6kN8qWCgJQ==" crossorigin="anonymous"></script>
 		<!-- icon -->
 		<link rel="apple-touch-icon" href="<?php echo I18n::encode($BASEPATH); ?>img/apple-touch-icon.png" sizes="180x180" />
 		<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
@@ -561,7 +562,29 @@ endif;
 						<pre id="prettyprint" class="col-md-12 prettyprint linenums:1"></pre>
 					</div>
 					<div id="plaintext" class="col-md-12 hidden"></div>
-					<p class="col-md-12"><textarea id="message" name="message" cols="80" rows="25" class="form-control hidden"></textarea></p>
+					<div id="messageContainer" class="col-md-12 hidden">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapse1">Generate a password</a>
+								</h4>
+							</div>
+							<div id="collapse1" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="form-group">
+										<label for="passwordCharset">Charset:</label>
+										<textarea id="passwordCharset" rows="2" class="form-control"></textarea>
+									</div>
+									<div class="form-group">
+										<label for="passwordLength">Length:</label>
+										<input type="text" id="passwordLength" size="3" class="form-control"/>
+									</div>
+									<button id="passwordGenerate" class="btn btn-default">Generate</button>
+								</div>
+							</div>
+						</div>
+						<textarea id="message" name="message" cols="80" rows="25" class="form-control"></textarea>
+					</div>
 				</article>
 			</section>
 			<section class="container">

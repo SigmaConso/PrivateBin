@@ -2311,6 +2311,7 @@ jQuery.PrivateBin = (function($, RawDeflate) {
             $messageEdit,
             $messagePreview,
             $message,
+            $messageContainer,
             isPreview = false;
 
         /**
@@ -2358,7 +2359,7 @@ jQuery.PrivateBin = (function($, RawDeflate) {
             PasteViewer.hide();
 
             // reshow input
-            $message.removeClass('hidden');
+            $messageContainer.removeClass('hidden');
 
             me.focusInput();
 
@@ -2388,7 +2389,7 @@ jQuery.PrivateBin = (function($, RawDeflate) {
             $('#messagepreview').attr('aria-selected','true');
 
             // hide input as now preview is shown
-            $message.addClass('hidden');
+            $messageContainer.addClass('hidden');
 
             // show preview
             PasteViewer.setText($message.val());
@@ -2446,7 +2447,7 @@ jQuery.PrivateBin = (function($, RawDeflate) {
          */
         me.show = function()
         {
-            $message.removeClass('hidden');
+            $messageContainer.removeClass('hidden');
             $editorTabs.removeClass('hidden');
         };
 
@@ -2458,7 +2459,7 @@ jQuery.PrivateBin = (function($, RawDeflate) {
          */
         me.hide = function()
         {
-            $message.addClass('hidden');
+            $messageContainer.addClass('hidden');
             $editorTabs.addClass('hidden');
         };
 
@@ -2509,6 +2510,7 @@ jQuery.PrivateBin = (function($, RawDeflate) {
         {
             $editorTabs = $('#editorTabs');
             $message = $('#message');
+            $messageContainer = $('#messageContainer');
 
             // bind events
             $message.keydown(supportTabs);
